@@ -1,3 +1,3 @@
 module.expots = {
-    singleQuote:false,
+  singleQuote: false,
 };

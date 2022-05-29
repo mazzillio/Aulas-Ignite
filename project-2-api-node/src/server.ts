@@ -1,5 +1,9 @@
-import express from 'express';
+import express from "express";
+import { categoriesRoutes } from "./routes/categories.routes";
 
-const app=express();
+const app = express();
 
-app.listen(3500, () => console.log('serve is open'));
+app.use(express.json());
+app.use("/categories",categoriesRoutes);
+
+app.listen(3500, () => console.log("serve is open"));
