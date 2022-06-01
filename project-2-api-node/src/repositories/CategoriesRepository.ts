@@ -1,11 +1,9 @@
 import { Category } from "../model/Category";
+import { ICategoriesRepository, ICreateCategoryDTO } from "./ICategoriesReposiroty";
 
 // DTO =>DATA TRANSFER OBJECT
-interface ICreateCategoryDTO{
-    name:string
-    description:string
-}
-export class CategoriesRepository{
+
+export class CategoriesRepository implements ICategoriesRepository{
     private categories: Category[];
 
     constructor() {
@@ -25,7 +23,7 @@ export class CategoriesRepository{
     list(): Category[] {
         return this.categories;
     }
-    findByNAme(name: string): Category {
+    findByName(name: string): Category {
         const category = this.categories.find((category) => category.name === name);
         return category;
     }
