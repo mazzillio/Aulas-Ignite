@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { SpecificationsRepository } from "../../repositories/SpecificationsRepository";
 import { CreateSpecificationService } from "./CreateSpecificationService";
 
 export class CreateSpecificationController {
