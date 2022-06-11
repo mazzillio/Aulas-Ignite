@@ -1,0 +1,11 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"RentalX Documentation",
+        "description":"This is my first API RENT",
+        "version":"1.0.0",
+        "contact":{
+            "email":"mateca500@gmail.com"
+        }
+    }
+}
