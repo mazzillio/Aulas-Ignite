@@ -35,6 +35,15 @@ export class ImportCategoryService {
   }
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file);
-    console.log(categories);
+    categories.map(async (categories) => {
+      const { name, description } = categories;
+      const existisCategory = this.categoriesRepository.findByName(name);
+      if (!existisCategory) {
+        this.categoriesRepository.create({
+          name,
+          description,
+        });
+      }
+    });
   }
 }
