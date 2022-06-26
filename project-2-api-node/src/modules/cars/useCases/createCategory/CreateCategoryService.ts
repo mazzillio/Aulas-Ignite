@@ -6,10 +6,10 @@ interface IRequest {
 }
 export class CreateCategoryService {
   constructor(private categoriesRepository: ICategoriesRepository) {}
-  execute({ name, description }: IRequest): void {
-    if (this.categoriesRepository.findByName(name)) {
+  async execute({ name, description }: IRequest): Promise<void> {
+    if (await this.categoriesRepository.findByName(name)) {
       throw new Error("category already exists!");
     }
-    this.categoriesRepository.create({ name, description });
+    await this.categoriesRepository.create({ name, description });
   }
 }

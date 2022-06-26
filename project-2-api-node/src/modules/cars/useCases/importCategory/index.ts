@@ -2,7 +2,7 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { ImportCategoryController } from "./ImportCategoryController";
 import { ImportCategoryService } from "./ImportCategoryService";
 
-const categoriesRpository = CategoriesRepository.getInstance();
+const categoriesRpository = null;
 const importCategoryService = new ImportCategoryService(categoriesRpository);
 const importCategoryController = new ImportCategoryController(
   importCategoryService

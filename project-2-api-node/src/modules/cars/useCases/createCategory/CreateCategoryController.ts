@@ -4,9 +4,9 @@ import { CreateCategoryService } from "./CreateCategoryService";
 
 export class CreateCaltegoryContoller {
   constructor(private createCategoryService: CreateCategoryService) {}
-  handle(req: Request, res: Response): Response {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { name, description } = req.body;
-    this.createCategoryService.execute({
+    await this.createCategoryService.execute({
       name,
       description,
     });

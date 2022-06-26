@@ -35,6 +35,7 @@
         }
       }
     ],
+    "no-use-before-define": 0,
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "no-shadow": "off",

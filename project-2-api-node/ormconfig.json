@@ -6,6 +6,9 @@
     "password":"db123648",
     "database":"rentx",
     "migrations":["./src/database/migrations/*.ts"],
+    "entities": [
+        "./src/modules/cars/model/**/*.ts" 
+    ],
     "cli":{
         "migrationsDir":"./src/database/migrations"
     }
