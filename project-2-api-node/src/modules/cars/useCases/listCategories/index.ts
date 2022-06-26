@@ -2,10 +2,11 @@ import { CategoriesRepository } from "../../repositories/implementations/Categor
 import { ListCategoriesController } from "./listCategoriesController";
 import { ListCategoriesService } from "./listCategoriesService";
 
-const repository = null;
-const listCategoriesService = new ListCategoriesService(repository);
-const listCategoriesController = new ListCategoriesController(
-  listCategoriesService
-);
-
-export { listCategoriesController };
+export default (): ListCategoriesController => {
+  const repository = new CategoriesRepository();
+  const listCategoriesService = new ListCategoriesService(repository);
+  const listCategoriesController = new ListCategoriesController(
+    listCategoriesService
+  );
+  return listCategoriesController;
+};
