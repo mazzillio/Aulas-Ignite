@@ -38,9 +38,9 @@ export class ImportCategoryService {
     const categories = await this.loadCategories(file);
     categories.map(async (categories) => {
       const { name, description } = categories;
-      const existisCategory = this.categoriesRepository.findByName(name);
+      const existisCategory = await this.categoriesRepository.findByName(name);
       if (!existisCategory) {
-        this.categoriesRepository.create({
+        await this.categoriesRepository.create({
           name,
           description,
         });

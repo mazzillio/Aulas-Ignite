@@ -4,9 +4,9 @@ import { ImportCategoryService } from "./ImportCategoryService";
 
 export class ImportCategoryController {
   constructor(private importCategoryService: ImportCategoryService) {}
-  handle(req: Request, res: Response): Response {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { file } = req;
-    this.importCategoryService.execute(file);
+    await this.importCategoryService.execute(file);
     return res.send();
   }
 }
