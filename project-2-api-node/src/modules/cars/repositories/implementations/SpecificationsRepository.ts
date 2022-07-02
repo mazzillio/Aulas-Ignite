@@ -12,11 +12,9 @@ export class SpecificationsRepository implements ISpecificationsRepository {
     this.repository = getRepository(Specification);
   }
   async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
-    const specification = new Specification();
-    Object.assign(specification, {
+    const specification = this.repository.create({
       name,
       description,
-      created_at: new Date(),
     });
     await this.repository.save(specification);
   }
