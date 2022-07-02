@@ -18,9 +18,12 @@ services:
    build: .
    container_name: rentx
    ports:
-    - 3500:3500
+     - 3500:3500
    volumes:
     - .:/usr/app
-   network_mode: host
+   links:
+     - database_ignite
+   depends_on:
+     - database_ignite
 volumes:
   pgdata:
