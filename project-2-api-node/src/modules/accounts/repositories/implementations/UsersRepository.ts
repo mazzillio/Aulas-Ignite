@@ -10,10 +10,9 @@ export class UsersRepository implements IUsersRepository {
     this.repository = getRepository(User);
   }
   async create(dataRequest: ICreateUserDTO): Promise<void> {
-    const { name, username, email, password, driver_license } = dataRequest;
+    const { name, email, password, driver_license } = dataRequest;
     const user = this.repository.create({
       name,
-      username,
       email,
       password,
       driver_license,
