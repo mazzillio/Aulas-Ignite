@@ -3,7 +3,7 @@
     "port":5432,
     "host":"localhost",
     "username":"postgres",
-    "password":"db123648",
+    "password":"db1234",
     "database":"rentx",
     "migrations":["./src/database/migrations/*.ts"],
     "entities": [
