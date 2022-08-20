@@ -8,10 +8,8 @@ import {
 
 // DTO =>DATA TRANSFER OBJECT
 
-export class CategoriesRepository implements ICategoriesRepository {
+export class CategoriesRepositoryPostrges implements ICategoriesRepository {
   private repository: Repository<Category>;
-
-  private static INSTANCE: CategoriesRepository;
   constructor() {
     this.repository = getRepository(Category);
   }
