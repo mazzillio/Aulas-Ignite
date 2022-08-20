@@ -4,7 +4,7 @@ import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { User } from "../../model/User";
 import { IUsersRepository } from "../IUsersRepository";
 
-export class UsersRepository implements IUsersRepository {
+export class UsersRepositoryPostgres implements IUsersRepository {
   private repository: Repository<User>;
   constructor() {
     this.repository = getRepository(User);
