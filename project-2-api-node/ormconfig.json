@@ -5,11 +5,11 @@
     "username":"postgres",
     "password":"db1234",
     "database":"rentx",
-    "migrations":["./src/database/migrations/*.ts"],
+    "migrations":["./src/shared/typeorm/migrations/*.ts"],
     "entities": [
-        "./src/modules/**/model/**/*.ts" 
+        "./src/modules/**/infra/model/**/*.ts" 
     ],
     "cli":{
-        "migrationsDir":"./src/database/migrations"
+        "migrationsDir":"./src/shared/typeorm/migrations"
     }
 }

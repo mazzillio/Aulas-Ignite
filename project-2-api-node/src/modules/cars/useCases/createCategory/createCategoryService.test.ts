@@ -1,6 +1,6 @@
-import { AppError } from "@errors/AppError";
 import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesReposiroty";
 import { CategoriesRepositoryInMemory } from "@modules/cars/repositories/implementations/CategoriesRepositoryInMemory";
+import { AppError } from "@shared/errors/AppError";
 
 import { CreateCategoryService } from "./CreateCategoryService";
 
