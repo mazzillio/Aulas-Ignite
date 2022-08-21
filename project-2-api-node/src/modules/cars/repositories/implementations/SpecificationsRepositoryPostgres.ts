@@ -1,12 +1,14 @@
 import { getRepository, Repository } from "typeorm";
 
-import { Specification } from "../../model/Specification";
+import { Specification } from "@modules/cars/model/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
-} from "../ISpecificationsReposiroty";
+} from "@modules/cars/repositories/ISpecificationsReposiroty";
 
-export class SpecificationsRepository implements ISpecificationsRepository {
+export class SpecificationsRepositoryPostgres
+  implements ISpecificationsRepository
+{
   private repository: Repository<Specification>;
   constructor() {
     this.repository = getRepository(Specification);

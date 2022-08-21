@@ -3,8 +3,9 @@ import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
 import "./database";
-import "./shared/container";
-import { middlewareError } from "./middlewares/error";
+import "@shared/container";
+import { middlewareError } from "@middlewares/error";
+
 import { routes } from "./routes";
 import swaggerFile from "./Swagger.json";
 

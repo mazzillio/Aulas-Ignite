@@ -1,6 +1,7 @@
-import { AppError } from "../../../../errors/AppError";
-import { ICategoriesRepository } from "../../repositories/ICategoriesReposiroty";
-import { CategoriesRepositoryInMemory } from "../../repositories/implementations/CategoriesRepositoryInMemory";
+import { AppError } from "@errors/AppError";
+import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesReposiroty";
+import { CategoriesRepositoryInMemory } from "@modules/cars/repositories/implementations/CategoriesRepositoryInMemory";
+
 import { CreateCategoryService } from "./CreateCategoryService";
 
 describe("Create category", () => {

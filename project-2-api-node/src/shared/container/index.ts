@@ -1,11 +1,11 @@
 import { container } from "tsyringe";
 
-import { UsersRepositoryPostgres } from "../../modules/accounts/repositories/implementations/UsersRepositoryPostgres";
-import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
-import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesReposiroty";
-import { CategoriesRepositoryPostrges } from "../../modules/cars/repositories/implementations/CategoriesRepositoryPostgres";
-import { SpecificationsRepository } from "../../modules/cars/repositories/implementations/SpecificationsRepository";
-import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsReposiroty";
+import { UsersRepositoryPostgres } from "@modules/accounts/repositories/implementations/UsersRepositoryPostgres";
+import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesReposiroty";
+import { CategoriesRepositoryPostrges } from "@modules/cars/repositories/implementations/CategoriesRepositoryPostgres";
+import { SpecificationsRepositoryPostgres } from "@modules/cars/repositories/implementations/SpecificationsRepositoryPostgres";
+import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsReposiroty";
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
@@ -13,7 +13,7 @@ container.registerSingleton<ICategoriesRepository>(
 );
 container.registerSingleton<ISpecificationsRepository>(
   "SpecificationsRepository",
-  SpecificationsRepository
+  SpecificationsRepositoryPostgres
 );
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
