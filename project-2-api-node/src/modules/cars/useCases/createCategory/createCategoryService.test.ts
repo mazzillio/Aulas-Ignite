@@ -1,4 +1,4 @@
-import { AppError } from "../../../../Errors/AppError";
+import { AppError } from "../../../../errors/AppError";
 import { ICategoriesRepository } from "../../repositories/ICategoriesReposiroty";
 import { CategoriesRepositoryInMemory } from "../../repositories/implementations/CategoriesRepositoryInMemory";
 import { CreateCategoryService } from "./CreateCategoryService";
