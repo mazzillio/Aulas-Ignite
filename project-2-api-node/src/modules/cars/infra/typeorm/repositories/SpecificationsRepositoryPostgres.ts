@@ -1,10 +1,10 @@
 import { getRepository, Repository } from "typeorm";
 
-import { Specification } from "@modules/cars/infra/typeorm/model/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
-} from "@modules/cars/repositories/ISpecificationsReposiroty";
+} from "../../../repositories/ISpecificationsReposiroty";
+import { Specification } from "../model/Specification";
 
 export class SpecificationsRepositoryPostgres
   implements ISpecificationsRepository

@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
-import { Category } from "@modules/cars/infra/typeorm/model/Category";
-import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesReposiroty";
+import { Category } from "../../infra/typeorm/model/Category";
+import { ICategoriesRepository } from "../../repositories/ICategoriesReposiroty";
 
 @injectable()
 export class ListCategoriesService {

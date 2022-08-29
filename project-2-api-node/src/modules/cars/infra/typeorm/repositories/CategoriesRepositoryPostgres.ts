@@ -1,10 +1,10 @@
 import { getRepository, Repository } from "typeorm";
 
-import { Category } from "@modules/cars/infra/typeorm/model/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "@modules/cars/repositories/ICategoriesReposiroty";
+} from "../../../repositories/ICategoriesReposiroty";
+import { Category } from "../model/Category";
 
 // DTO =>DATA TRANSFER OBJECT
 

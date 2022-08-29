@@ -2,11 +2,10 @@ import express from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
-import "@shared/infra/typeorm";
-import "@shared/container";
-import { middlewareError } from "@shared/infra/http/middlewares/error";
-
+import "../typeorm";
+import "../../container";
 import swaggerFile from "../../../Swagger.json";
+import { middlewareError } from "./middlewares/error";
 import { routes } from "./routes";
 
 const app = express();
