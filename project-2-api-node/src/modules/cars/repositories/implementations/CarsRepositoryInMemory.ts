@@ -13,8 +13,7 @@ export class CarsRepositoryInMemory implements ICarsRepository {
     brand,
     category_id,
   }: ICreateCarDTO): Promise<void> {
-    const car = new Car();
-    Object.assign(car, {
+    const car = new Car({
       name,
       description,
       daily_rate,

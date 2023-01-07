@@ -4,7 +4,7 @@ import { AppError } from "../../../../shared/errors/AppError";
 import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 
-// @injectable()
+@injectable()
 export class CreateCarService {
   constructor(private carsRepository: ICarsRepository) {} // @inject("CarsRepository") private carsRepository: ICarsRepository
   async execute({
