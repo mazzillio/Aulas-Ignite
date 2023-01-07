@@ -5,9 +5,11 @@ import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
 import { Car } from "../../infra/model/Car";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 
-// @injectable()
+@injectable()
 export class CreateCarService {
-  constructor(private carsRepository: ICarsRepository) {} // @inject("CarsRepository") private carsRepository: ICarsRepository
+  constructor(
+    @inject("CarsRepository") private carsRepository: ICarsRepository
+  ) {}
   async execute({
     name,
     description,

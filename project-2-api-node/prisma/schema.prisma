@@ -40,10 +40,10 @@ model Car {
   id            String   @id
   name          String
   description   String
-  daily_rate    Decimal
+  daily_rate    Float
   avaliable     Boolean  @default(true)
   license_plate String
-  fine_amount   Decimal
+  fine_amount   Float
   brand         String
   category_id   String
   created_at    DateTime @default(now())
