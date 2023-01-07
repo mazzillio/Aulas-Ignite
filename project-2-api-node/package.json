@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "commonjs",
+  "type": "module",
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"commonjs\"} prisma/admin-seed.ts"
+  },
   "scripts": {
     "lint": "eslint src/ ./test --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
     "dev": "tsx watch src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "test": "jest"
+    "test": "jest",
+    "seed": "tsx prisma/admin-seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.8.1",
