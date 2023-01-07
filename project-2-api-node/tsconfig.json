@@ -4,10 +4,12 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "ES2020",
-    "resolveJsonModule": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
     "strict": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   }
 }

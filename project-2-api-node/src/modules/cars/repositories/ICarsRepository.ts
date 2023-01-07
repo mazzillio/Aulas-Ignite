@@ -1,5 +1,5 @@
 import { ICreateCarDTO } from "../dtos/ICreateCarDTO";
-import { Car } from "../infra/typeorm/model/Car";
+import { Car } from "../infra/model/Car";
 
 export interface ICarsRepository {
   create(data: ICreateCarDTO): Promise<void>;

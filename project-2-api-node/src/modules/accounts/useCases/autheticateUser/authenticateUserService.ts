@@ -1,5 +1,6 @@
 import { compare } from "bcrypt";
-import { sign } from "jsonwebtoken";
+import jsonwebtoken  from "jsonwebtoken/index";
+const { sign } = jsonwebtoken;
 import { inject, injectable } from "tsyringe";
 
 import { AppError } from "../../../../shared/errors/AppError";
