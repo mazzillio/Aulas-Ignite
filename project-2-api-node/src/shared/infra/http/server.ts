@@ -1,7 +1,8 @@
 import express from "express";
 import "express-async-errors";
-import 'reflect-metadata';
+import "reflect-metadata";
 import swaggerUi from "swagger-ui-express";
+
 import "../../container";
 import swaggerFile from "../../../Swagger.json";
 import { middlewareError } from "./middlewares/error";

@@ -20,7 +20,6 @@ describe("Create car", () => {
       category_id: "category",
     });
     expect(car).toHaveProperty("id");
-    
   });
   it("should not be able to create a car with existst license plate", () => {
     expect(async () => {

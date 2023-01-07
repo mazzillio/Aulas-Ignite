@@ -10,10 +10,7 @@ const specificationsRoutes = Router();
   ensureAuthenticated,
   createSpecificationController.handle
 );
-*/ 
-specificationsRoutes.post(
-  "/",
-  createSpecificationController.handle
-);
+*/
+specificationsRoutes.post("/", createSpecificationController.handle);
 
 export { specificationsRoutes };

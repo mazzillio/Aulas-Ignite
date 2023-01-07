@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
-interface propsCarContructor {
+
+interface IPropsCarContructor {
   name: string;
   description: string;
   daily_rate: number;
@@ -13,24 +14,30 @@ export class Car {
   name: string;
   description: string;
   daily_rate: number;
-  avaliable: boolean;
+  avaliable = true;
   license_plate: string;
   brand: string;
   fine_amount: number;
   category_id: string;
   created_at: Date;
-  constructor( { name, description, daily_rate, license_plate, fine_amount,brand, category_id}:propsCarContructor) {
-   this.name = name;
-   this.description = description;
-   this.daily_rate = daily_rate;
-   this.license_plate = license_plate;
-   this.fine_amount = fine_amount;
-   this.category_id = category_id;
-   this.brand = brand;
+  constructor({
+    name,
+    description,
+    daily_rate,
+    license_plate,
+    fine_amount,
+    brand,
+    category_id,
+  }: IPropsCarContructor) {
+    this.name = name;
+    this.description = description;
+    this.daily_rate = daily_rate;
+    this.license_plate = license_plate;
+    this.fine_amount = fine_amount;
+    this.category_id = category_id;
+    this.brand = brand;
     if (!this.id) {
       this.id = randomUUID();
-      this.avaliable = true;
     }
-   }
-  
+  }
 }

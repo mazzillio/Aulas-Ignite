@@ -1,10 +1,11 @@
 import { compare } from "bcrypt";
-import jsonwebtoken  from "jsonwebtoken/index";
-const { sign } = jsonwebtoken;
+import jsonwebtoken from "jsonwebtoken/index";
 import { inject, injectable } from "tsyringe";
 
 import { AppError } from "../../../../shared/errors/AppError";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
+
+const { sign } = jsonwebtoken;
 
 interface IRequestAuth {
   email: string;

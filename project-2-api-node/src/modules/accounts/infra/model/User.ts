@@ -1,17 +1,15 @@
-
 import { v4 as uuid } from "uuid";
 
-interface propsCreateUser {
+interface IPropsCreateUser {
   name: string;
-  email:string;
+  email: string;
   password: string;
-  driver_license:string;
-  isAdmin?:boolean;
-  avatar?:string;
+  driver_license: string;
+  isAdmin?: boolean;
+  avatar?: string;
 }
 
 export class User {
- 
   id: string;
   name: string;
   email: string;
@@ -20,7 +18,14 @@ export class User {
   isAdmin: boolean;
   avatar: string;
   created_at: Date;
-  constructor({ name, email, password, driver_license, isAdmin, avatar }:propsCreateUser) {
+  constructor({
+    name,
+    email,
+    password,
+    driver_license,
+    isAdmin,
+    avatar,
+  }: IPropsCreateUser) {
     this.name = name;
     this.email = email;
     this.password = password;
@@ -29,7 +34,7 @@ export class User {
       this.id = uuid();
       this.isAdmin = isAdmin ?? false;
     }
-    if(avatar) {
+    if (avatar) {
       this.avatar = avatar;
     }
   }

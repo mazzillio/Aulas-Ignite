@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
+import { UsersPostgresRepository } from "src/modules/accounts/infra/prisma/UsersPostgresRepository";
 
-import { UsersRepositoryPostgres } from "../../../../modules/accounts/infra/typeorm/repositories/UsersRepositoryPostgres";
 import { AppError } from "../../../errors/AppError";
 
 interface IPayload {
@@ -22,7 +22,7 @@ export async function ensureAuthenticated(
       token,
       "e00eff7a9665ab9dccdcf1f0444f3da437417f55"
     ) as IPayload;
-    const usersRepository = new UsersRepositoryPostgres();
+    const usersRepository = new UsersPostgresRepository();
     const user = await usersRepository.findById(user_id);
     if (!user) {
       throw new AppError("User does not exists!", 401);
