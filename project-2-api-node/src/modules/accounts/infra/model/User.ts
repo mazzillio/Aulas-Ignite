@@ -27,9 +27,7 @@ export class User {
     this.driver_license = driver_license;
     if (!this.id) {
       this.id = uuid();
-    }
-    if(isAdmin !== undefined || isAdmin !==null ) {
-      this.isAdmin = isAdmin;
+      this.isAdmin = isAdmin ?? false;
     }
     if(avatar) {
       this.avatar = avatar;

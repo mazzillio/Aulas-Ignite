@@ -27,8 +27,10 @@ export class Car {
    this.fine_amount = fine_amount;
    this.category_id = category_id;
    this.brand = brand;
-    if(!this.id) {
-    this.id = randomUUID();
+    if (!this.id) {
+      this.id = randomUUID();
+      this.avaliable = true;
+    }
    }
-  }
+  
 }

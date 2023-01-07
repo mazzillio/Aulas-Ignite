@@ -10,7 +10,7 @@ describe("Create car", () => {
     createCarService = new CreateCarService(carsRepository);
   });
   it("should be able create a new car", async () => {
-    await createCarService.execute({
+    const car = await createCarService.execute({
       name: "name car",
       description: " desc car",
       daily_rate: 100,
@@ -19,6 +19,8 @@ describe("Create car", () => {
       brand: "brand",
       category_id: "category",
     });
+    expect(car).toHaveProperty("id");
+    
   });
   it("should not be able to create a car with existst license plate", () => {
     expect(async () => {
@@ -41,5 +43,17 @@ describe("Create car", () => {
         category_id: "category",
       });
     }).rejects.toBeInstanceOf(AppError);
+  });
+  it("should not be able to create a car with available true by default", async () => {
+    const car = await createCarService.execute({
+      name: "Car available",
+      description: " desc car",
+      daily_rate: 100,
+      license_plate: "dehjbd",
+      fine_amount: 60,
+      brand: "brand",
+      category_id: "category",
+    });
+    expect(car.avaliable).toBe(true);
   });
 });
