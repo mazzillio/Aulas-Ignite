@@ -18,6 +18,17 @@ export class CarsPostgresRepository implements ICarsRepository {
         brand: car.brand,
         fine_amount: car.fine_amount,
         category_id: car.category_id,
+        SpecificationsCars: {
+          create: [
+            {
+              specification: {
+                connect: {
+                  id: data.specification_id,
+                },
+              },
+            },
+          ],
+        },
       },
     });
     return car;
@@ -26,6 +37,9 @@ export class CarsPostgresRepository implements ICarsRepository {
     const car = await prisma.car.findFirst({
       where: {
         license_plate,
+      },
+      include: {
+        SpecificationsCars: true,
       },
     });
     return car;
@@ -41,6 +55,9 @@ export class CarsPostgresRepository implements ICarsRepository {
           avaliable: true,
           brand,
         },
+        include: {
+          SpecificationsCars: true,
+        },
       });
     }
     if (category_id) {
@@ -48,6 +65,9 @@ export class CarsPostgresRepository implements ICarsRepository {
         where: {
           avaliable: true,
           category_id,
+        },
+        include: {
+          SpecificationsCars: true,
         },
       });
     }
@@ -57,11 +77,17 @@ export class CarsPostgresRepository implements ICarsRepository {
           avaliable: true,
           name,
         },
+        include: {
+          SpecificationsCars: true,
+        },
       });
     }
     return prisma.car.findMany({
       where: {
         avaliable: true,
+      },
+      include: {
+        SpecificationsCars: true,
       },
     });
   }

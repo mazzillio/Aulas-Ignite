@@ -18,6 +18,7 @@ export class CreateCarService {
     fine_amount,
     brand,
     category_id,
+    specification_id,
   }: ICreateCarDTO): Promise<Car> {
     const carAreadyExists = await this.carsRepository.findByLicensePlate(
       license_plate
@@ -33,6 +34,7 @@ export class CreateCarService {
       fine_amount,
       brand,
       category_id,
+      specification_id,
     });
     return car;
   }
