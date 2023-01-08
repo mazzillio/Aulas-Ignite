@@ -1,4 +1,3 @@
-module.expots = {
+module.exports = {
   singleQuote: false,
-  type:"commonjs"
 };
