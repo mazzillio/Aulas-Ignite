@@ -23,12 +23,46 @@ export class CarsPostgresRepository implements ICarsRepository {
     return car;
   }
   async findByLicensePlate(license_plate: string): Promise<Car> {
-    console.log("lincense_plate", license_plate);
     const car = await prisma.car.findFirst({
       where: {
         license_plate,
       },
     });
     return car;
+  }
+  async findAvailables(
+    brand?: string,
+    category_id?: string,
+    name?: string
+  ): Promise<Car[]> {
+    if (brand) {
+      return prisma.car.findMany({
+        where: {
+          avaliable: true,
+          brand,
+        },
+      });
+    }
+    if (category_id) {
+      return prisma.car.findMany({
+        where: {
+          avaliable: true,
+          category_id,
+        },
+      });
+    }
+    if (name) {
+      return prisma.car.findMany({
+        where: {
+          avaliable: true,
+          name,
+        },
+      });
+    }
+    return prisma.car.findMany({
+      where: {
+        avaliable: true,
+      },
+    });
   }
 }
