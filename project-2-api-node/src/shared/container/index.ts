@@ -1,7 +1,9 @@
 import { UsersPostgresRepository } from "src/modules/accounts/infra/prisma/UsersPostgresRepository";
+import { CarsImagesPostgresRepository } from "src/modules/cars/infra/prisma/CarsImagesPostgresRepository";
 import { CarsPostgresRepository } from "src/modules/cars/infra/prisma/CarsPostgresRepository";
 import { CategoriesPostgresRepository } from "src/modules/cars/infra/prisma/CategoriesPostgresRepository";
 import { SpecificationPostgresRepository } from "src/modules/cars/infra/prisma/SpecificationPostgresRepository";
+import { ICarsImagesRepository } from "src/modules/cars/repositories/ICarsImagesRepository";
 import { ICarsRepository } from "src/modules/cars/repositories/ICarsRepository";
 import { container } from "tsyringe";
 
@@ -26,4 +28,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<ICarsRepository>(
   "CarsRepository",
   CarsPostgresRepository
+);
+
+container.registerSingleton<ICarsImagesRepository>(
+  "CarsImageRepository",
+  CarsImagesPostgresRepository
 );
