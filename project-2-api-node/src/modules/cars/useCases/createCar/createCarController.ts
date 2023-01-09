@@ -14,9 +14,7 @@ export class CreateCarController {
       fine_amount,
       brand,
       category_id,
-      specification_id,
     } = req.body;
-    console.log("specification controler", specification_id);
     const car = await createCarService.execute({
       name,
       description,
@@ -25,7 +23,6 @@ export class CreateCarController {
       fine_amount,
       brand,
       category_id,
-      specification_id,
     });
     return res.status(201).json(car);
   }

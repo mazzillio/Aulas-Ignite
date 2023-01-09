@@ -1,5 +1,7 @@
 import { randomUUID } from "crypto";
 
+import { Specification } from "./Specification";
+
 interface IPropsCarContructor {
   name: string;
   description: string;
@@ -20,6 +22,7 @@ export class Car {
   fine_amount: number;
   category_id: string;
   created_at: Date;
+  specifications: Specification[];
   constructor({
     name,
     description,
@@ -38,6 +41,9 @@ export class Car {
     this.brand = brand;
     if (!this.id) {
       this.id = randomUUID();
+    }
+    if (!this.specifications) {
+      this.specifications = [];
     }
   }
 }

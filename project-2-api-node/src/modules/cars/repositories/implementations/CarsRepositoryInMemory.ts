@@ -1,3 +1,5 @@
+import { Specification } from "@prisma/client";
+
 import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
 import { Car } from "../../infra/model/Car";
 import { ICarsRepository } from "../ICarsRepository";
@@ -45,5 +47,16 @@ export class CarsRepositoryInMemory implements ICarsRepository {
       return carsAvailables.filter((car) => car.name === name);
     }
     return carsAvailables;
+  }
+  async findById(id: string): Promise<Car> {
+    return this.cars.find((car) => car.id === id);
+  }
+  async createSpecifications(
+    car: Car,
+    specifications: Specification[]
+  ): Promise<void> {
+    Object.assign(car, {
+      specifications,
+    });
   }
 }
