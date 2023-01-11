@@ -5,7 +5,7 @@ import { CreateCategoryContoller } from "../../../../modules/cars/useCases/creat
 import { ImportCategoryController } from "../../../../modules/cars/useCases/importCategory/ImportCategoryController";
 import { ListCategoriesController } from "../../../../modules/cars/useCases/listCategories/listCategoriesController";
 import { ensureAdim } from "../middlewares/ensureAdmin";
-import { ensureAuthenticated } from "../middlewares/ensureAutheticated";
+import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const categoriesRoutes = Router();
 

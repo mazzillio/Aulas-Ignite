@@ -64,15 +64,15 @@ model ImageCar {
 }
 
 model Rentals {
-  id                   String   @id
-  card_id              String
+  id                   String    @id
+  car_id               String
   user_id              String
-  start_date           DateTime @default(now())
-  end_date             DateTime
   expected_return_date DateTime
-  total                Float
-  created_at           DateTime @default(now())
-  updated_at           DateTime @default(now())
-  car                  Car      @relation(fields: [card_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  user                 User     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  end_date             DateTime?
+  total                Float?
+  start_date           DateTime  @default(now())
+  created_at           DateTime  @default(now())
+  updated_at           DateTime  @default(now())
+  car                  Car       @relation(fields: [car_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  user                 User      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }

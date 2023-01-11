@@ -4,9 +4,9 @@ interface IPropsRental {
   id?: string;
   car_id: string;
   user_id: string;
+  expected_return_date: Date;
   start_date?: Date;
   end_date?: Date;
-  expected_return_date: Date;
   total?: number;
   created_at?: Date;
   updated_at?: Date;
@@ -21,14 +21,18 @@ export class Rental {
   total: number;
   created_at: Date;
   updated_at: Date;
-  constructor(props: IPropsRental) {
-    this.car_id = props.car_id;
-    this.user_id = props.user_id;
-    this.expected_return_date = props.expected_return_date;
-    this.start_date = props.start_date ?? null;
-    if (!props.id) {
+  constructor({
+    car_id,
+    user_id,
+    expected_return_date,
+    start_date,
+  }: IPropsRental) {
+    this.car_id = car_id;
+    this.user_id = user_id;
+    this.expected_return_date = expected_return_date;
+    this.start_date = start_date ?? null;
+    if (!this.id) {
       this.id = randomUUID();
-      this.end_date = null;
     }
   }
 }

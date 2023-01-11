@@ -1,3 +1,5 @@
+import { inject, injectable } from "tsyringe";
+
 import { IDateProvider } from "../../../../shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "../../../../shared/errors/AppError";
 import { Rental } from "../../infra/models/Rental";
@@ -8,9 +10,12 @@ interface IRequest {
   car_id: string;
   expected_return_date: Date;
 }
+@injectable()
 export class CreateRentalService {
   constructor(
+    @inject("RentalsRepository")
     private rentalsRepository: IRentalsRepository,
+    @inject("DayjsDateProvider")
     private dateProvider: IDateProvider
   ) {}
   async execute({
