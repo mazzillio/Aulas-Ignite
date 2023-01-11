@@ -3,7 +3,7 @@ import { prisma } from "src/shared/infra/prisma/prisma";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
-} from "../../repositories/ISpecificationsReposiroty";
+} from "../../repositories/ISpecificationsRepository";
 import { Specification } from "../model/Specification";
 
 export class SpecificationPostgresRepository

@@ -8,8 +8,8 @@ import { ICarsRepository } from "src/modules/cars/repositories/ICarsRepository";
 import { container } from "tsyringe";
 
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
-import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesReposiroty";
-import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsReposiroty";
+import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
+import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsRepository";
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",

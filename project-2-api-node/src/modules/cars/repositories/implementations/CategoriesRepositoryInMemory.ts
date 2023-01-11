@@ -2,7 +2,7 @@ import { Category } from "../../infra/model/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../ICategoriesReposiroty";
+} from "../ICategoriesRepository";
 
 export class CategoriesRepositoryInMemory implements ICategoriesRepository {
   categories: Category[] = [];

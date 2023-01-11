@@ -3,7 +3,7 @@ import { prisma } from "src/shared/infra/prisma/prisma";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../../repositories/ICategoriesReposiroty";
+} from "../../repositories/ICategoriesRepository";
 import { Category } from "../model/Category";
 
 export class CategoriesPostgresRepository implements ICategoriesRepository {

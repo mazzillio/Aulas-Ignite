@@ -2,7 +2,7 @@ import { Specification } from "../../infra/model/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
-} from "../ISpecificationsReposiroty";
+} from "../ISpecificationsRepository";
 
 export class SpecificationsRepositoryInMemory
   implements ISpecificationsRepository

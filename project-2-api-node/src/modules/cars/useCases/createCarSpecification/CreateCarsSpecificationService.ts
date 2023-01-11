@@ -3,7 +3,7 @@ import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
 import { Car } from "../../infra/model/Car";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
-import { ISpecificationsRepository } from "../../repositories/ISpecificationsReposiroty";
+import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
 interface IRequest {
   car_id: string;
