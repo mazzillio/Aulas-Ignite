@@ -1,5 +1,4 @@
-import { prisma } from "src/shared/infra/prisma/prisma";
-
+import { prisma } from "../../../../shared/infra/prisma/prisma";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,

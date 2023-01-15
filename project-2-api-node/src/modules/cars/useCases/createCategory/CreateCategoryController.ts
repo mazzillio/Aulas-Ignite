@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 
 import { CreateCategoryService } from "./CreateCategoryService";
 
-export class CreateCategoryContoller {
+export class CreateCategoryController {
   async handle(req: Request, res: Response): Promise<Response> {
     const { name, description } = req.body;
     const createCategoryService = container.resolve(CreateCategoryService);

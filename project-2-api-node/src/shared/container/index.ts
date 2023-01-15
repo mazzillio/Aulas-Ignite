@@ -1,18 +1,19 @@
-import { UsersPostgresRepository } from "src/modules/accounts/infra/prisma/UsersPostgresRepository";
-import { CarsImagesPostgresRepository } from "src/modules/cars/infra/prisma/CarsImagesPostgresRepository";
-import { CarsPostgresRepository } from "src/modules/cars/infra/prisma/CarsPostgresRepository";
-import { CategoriesPostgresRepository } from "src/modules/cars/infra/prisma/CategoriesPostgresRepository";
-import { SpecificationPostgresRepository } from "src/modules/cars/infra/prisma/SpecificationPostgresRepository";
-import { ICarsImagesRepository } from "src/modules/cars/repositories/ICarsImagesRepository";
-import { ICarsRepository } from "src/modules/cars/repositories/ICarsRepository";
-import { RentalsPostgresRepository } from "src/modules/rentals/infra/prisma/RentalsPostgresRepository";
-import { IRentalsRepository } from "src/modules/rentals/repositories/IRentalsRepository";
 import { container } from "tsyringe";
-import "./providers";
 
+import { UsersPostgresRepository } from "../../modules/accounts/infra/prisma/UsersPostgresRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
+import { CarsImagesPostgresRepository } from "../../modules/cars/infra/prisma/CarsImagesPostgresRepository";
+import { CarsPostgresRepository } from "../../modules/cars/infra/prisma/CarsPostgresRepository";
+import { CategoriesPostgresRepository } from "../../modules/cars/infra/prisma/CategoriesPostgresRepository";
+import { SpecificationPostgresRepository } from "../../modules/cars/infra/prisma/SpecificationPostgresRepository";
+import { ICarsImagesRepository } from "../../modules/cars/repositories/ICarsImagesRepository";
+import { ICarsRepository } from "../../modules/cars/repositories/ICarsRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
 import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsRepository";
+import { RentalsPostgresRepository } from "../../modules/rentals/infra/prisma/RentalsPostgresRepository";
+import { IRentalsRepository } from "../../modules/rentals/repositories/IRentalsRepository";
+
+import "./providers";
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",

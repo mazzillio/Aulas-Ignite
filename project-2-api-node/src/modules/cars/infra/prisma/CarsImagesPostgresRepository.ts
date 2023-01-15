@@ -1,5 +1,4 @@
-import { prisma } from "src/shared/infra/prisma/prisma";
-
+import { prisma } from "../../../../shared/infra/prisma/prisma";
 import { ICarsImagesRepository } from "../../repositories/ICarsImagesRepository";
 import { CarImage } from "../model/CarImage";
 

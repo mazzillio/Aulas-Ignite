@@ -1,5 +1,4 @@
-import { prisma } from "src/shared/infra/prisma/prisma";
-
+import { prisma } from "../../../../shared/infra/prisma/prisma";
 import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 import { Car } from "../model/Car";

@@ -1,5 +1,4 @@
-import { prisma } from "src/shared/infra/prisma/prisma";
-
+import { prisma } from "../../../../shared/infra/prisma/prisma";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { User } from "../model/User";
