@@ -1,5 +1,6 @@
 import { prisma } from "../../../../shared/infra/prisma/prisma";
 import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
+import { IUpdateCarDTO } from "../../dtos/IUpdateCarDTO";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 import { Car } from "../model/Car";
 import { Specification } from "../model/Specification";
@@ -112,5 +113,15 @@ export class CarsPostgresRepository implements ICarsRepository {
       );
     });
     await Promise.all(updates);
+  }
+  async updateAvailable({ car_id, available }: IUpdateCarDTO): Promise<void> {
+    await prisma.car.update({
+      where: {
+        id: car_id,
+      },
+      data: {
+        avaliable: available,
+      },
+    });
   }
 }

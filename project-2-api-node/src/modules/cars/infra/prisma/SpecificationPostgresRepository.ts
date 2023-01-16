@@ -38,4 +38,7 @@ export class SpecificationPostgresRepository
       },
     });
   }
+  async find(): Promise<Specification[]> {
+    return prisma.specification.findMany();
+  }
 }

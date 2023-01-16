@@ -1,4 +1,5 @@
 import { ICreateCarDTO } from "../dtos/ICreateCarDTO";
+import { IUpdateCarDTO } from "../dtos/IUpdateCarDTO";
 import { Car } from "../infra/model/Car";
 import { Specification } from "../infra/model/Specification";
 
@@ -15,4 +16,5 @@ export interface ICarsRepository {
     car: Car,
     specifications: Specification[]
   ): Promise<void>;
+  updateAvailable(data: IUpdateCarDTO): Promise<void>;
 }

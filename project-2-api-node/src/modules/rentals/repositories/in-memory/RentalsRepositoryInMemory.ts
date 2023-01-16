@@ -3,6 +3,9 @@ import { Rental } from "../../infra/models/Rental";
 import { IRentalsRepository } from "../IRentalsRepository";
 
 export class RentalsRepositoryInMemory implements IRentalsRepository {
+  update(rental: Rental): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
   rentals: Rental[] = [];
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     return this.rentals.find(
@@ -27,5 +30,8 @@ export class RentalsRepositoryInMemory implements IRentalsRepository {
     });
     this.rentals.push(rental);
     return rental;
+  }
+  async findById(id: string): Promise<Rental> {
+    return this.rentals.find((rental) => rental.id === id);
   }
 }

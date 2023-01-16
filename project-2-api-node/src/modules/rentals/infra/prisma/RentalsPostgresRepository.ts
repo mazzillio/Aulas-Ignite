@@ -8,6 +8,7 @@ export class RentalsPostgresRepository implements IRentalsRepository {
     return prisma.rentals.findFirst({
       where: {
         car_id,
+        end_date: null,
       },
     });
   }
@@ -15,6 +16,7 @@ export class RentalsPostgresRepository implements IRentalsRepository {
     return prisma.rentals.findFirst({
       where: {
         user_id,
+        end_date: null,
       },
     });
   }
@@ -45,5 +47,20 @@ export class RentalsPostgresRepository implements IRentalsRepository {
       },
     });
     return rental_created;
+  }
+  async findById(id: string): Promise<Rental> {
+    const rental = await prisma.rentals.findUnique({ where: { id } });
+    return rental;
+  }
+  async update(rental: Rental): Promise<void> {
+    await prisma.rentals.update({
+      where: {
+        id: rental.id,
+      },
+      data: {
+        end_date: rental.end_date,
+        total: rental.total,
+      },
+    });
   }
 }

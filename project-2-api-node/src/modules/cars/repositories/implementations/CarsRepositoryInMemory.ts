@@ -1,6 +1,7 @@
 import { Specification } from "@prisma/client";
 
 import { ICreateCarDTO } from "../../dtos/ICreateCarDTO";
+import { IUpdateCarDTO } from "../../dtos/IUpdateCarDTO";
 import { Car } from "../../infra/model/Car";
 import { ICarsRepository } from "../ICarsRepository";
 
@@ -57,6 +58,12 @@ export class CarsRepositoryInMemory implements ICarsRepository {
   ): Promise<void> {
     Object.assign(car, {
       specifications,
+    });
+  }
+  async updateAvailable({ car_id, available }: IUpdateCarDTO): Promise<void> {
+    const car = this.cars.find((car) => car.id === car_id);
+    Object.assign(car, {
+      avaliable: available,
     });
   }
 }
