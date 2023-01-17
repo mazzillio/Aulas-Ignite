@@ -68,6 +68,9 @@ export class RentalsPostgresRepository implements IRentalsRepository {
       where: {
         user_id,
       },
+      include: {
+        car: true,
+      },
     });
   }
 }

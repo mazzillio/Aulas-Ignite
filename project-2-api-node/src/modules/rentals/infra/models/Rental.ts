@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 
+import { Car } from "../../../cars/infra/model/Car";
+
 interface IPropsRental {
   id?: string;
   car_id: string;
@@ -14,6 +16,7 @@ interface IPropsRental {
 export class Rental {
   id: string;
   car_id: string;
+  Car?: Car;
   user_id: string;
   start_date: Date;
   end_date: Date;
