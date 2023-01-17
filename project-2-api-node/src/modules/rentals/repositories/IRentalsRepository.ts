@@ -7,4 +7,5 @@ export interface IRentalsRepository {
   create(data: ICreateRentalDTO): Promise<Rental>;
   findById(id: string): Promise<Rental>;
   update(rental: Rental): Promise<void>;
+  findByUser(user_id: string): Promise<Rental[]>;
 }

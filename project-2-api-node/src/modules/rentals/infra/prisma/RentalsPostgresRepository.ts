@@ -63,4 +63,11 @@ export class RentalsPostgresRepository implements IRentalsRepository {
       },
     });
   }
+  async findByUser(user_id: string): Promise<Rental[]> {
+    return prisma.rentals.findMany({
+      where: {
+        user_id,
+      },
+    });
+  }
 }
