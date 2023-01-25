@@ -14,7 +14,6 @@ describe("Create Category Controller", () => {
   });
   afterAll(async () => {
     await prisma.category.deleteMany({});
-    await prisma.$disconnect();
   });
   it("should be able to create a new category", async () => {
     const resp = await request(app)

@@ -3,9 +3,6 @@ import { Rental } from "../../infra/models/Rental";
 import { IRentalsRepository } from "../IRentalsRepository";
 
 export class RentalsRepositoryInMemory implements IRentalsRepository {
-  update(rental: Rental): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
   rentals: Rental[] = [];
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     return this.rentals.find(
@@ -33,5 +30,12 @@ export class RentalsRepositoryInMemory implements IRentalsRepository {
   }
   async findById(id: string): Promise<Rental> {
     return this.rentals.find((rental) => rental.id === id);
+  }
+  async findByUser(user_id: string): Promise<Rental[]> {
+    return this.rentals.filter((rental) => rental.user_id === user_id);
+  }
+  async update(rental: Rental): Promise<void> {
+    const index = this.rentals.indexOf(rental);
+    this.rentals[index] = rental;
   }
 }

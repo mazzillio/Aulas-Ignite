@@ -62,8 +62,6 @@ export class CarsRepositoryInMemory implements ICarsRepository {
   }
   async updateAvailable({ car_id, available }: IUpdateCarDTO): Promise<void> {
     const car = this.cars.find((car) => car.id === car_id);
-    Object.assign(car, {
-      avaliable: available,
-    });
+    car.avaliable = available;
   }
 }

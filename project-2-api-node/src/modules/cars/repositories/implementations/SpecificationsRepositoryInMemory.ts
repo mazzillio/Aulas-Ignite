@@ -7,6 +7,9 @@ import {
 export class SpecificationsRepositoryInMemory
   implements ISpecificationsRepository
 {
+  find(): Promise<Specification[]> {
+    throw new Error("Method not implemented.");
+  }
   specifications: Specification[] = [];
   async create({
     name,

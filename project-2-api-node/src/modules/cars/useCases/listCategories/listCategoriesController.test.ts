@@ -32,7 +32,6 @@ describe("List Category Controller", () => {
   });
   afterAll(async () => {
     await prisma.category.deleteMany({});
-    await prisma.$disconnect();
   });
   it("should be able to list categories", async () => {
     const resp = await request(app)

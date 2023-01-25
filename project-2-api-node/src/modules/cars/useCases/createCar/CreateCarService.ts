@@ -19,10 +19,10 @@ export class CreateCarService {
     brand,
     category_id,
   }: ICreateCarDTO): Promise<Car> {
-    const carAreadyExists = await this.carsRepository.findByLicensePlate(
+    const carAlreadyExists = await this.carsRepository.findByLicensePlate(
       license_plate
     );
-    if (carAreadyExists) {
+    if (carAlreadyExists) {
       throw new AppError("Car already exists!");
     }
     const car = await this.carsRepository.create({
