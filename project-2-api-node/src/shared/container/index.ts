@@ -1,7 +1,9 @@
 import { container } from "tsyringe";
 
 import { UsersPostgresRepository } from "../../modules/accounts/infra/prisma/UsersPostgresRepository";
+import { UsersTokensPostgresRepository } from "../../modules/accounts/infra/prisma/UsersTokensPostgresRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
+import { IUsersTokensRepository } from "../../modules/accounts/repositories/IUsersTokensRepository";
 import { CarsImagesPostgresRepository } from "../../modules/cars/infra/prisma/CarsImagesPostgresRepository";
 import { CarsPostgresRepository } from "../../modules/cars/infra/prisma/CarsPostgresRepository";
 import { CategoriesPostgresRepository } from "../../modules/cars/infra/prisma/CategoriesPostgresRepository";
@@ -42,4 +44,8 @@ container.registerSingleton<ICarsImagesRepository>(
 container.registerSingleton<IRentalsRepository>(
   "RentalsRepository",
   RentalsPostgresRepository
+);
+container.registerSingleton<IUsersTokensRepository>(
+  "UsersTokenRepository",
+  UsersTokensPostgresRepository
 );
